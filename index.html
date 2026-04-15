@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="functionality.js"></script>
+    <title>Sprintly Planner</title>
+</head>
+<body>
+    <header>
+            
+        <img src=Sprintly.png alt="Persons face">
+        <br><br><br>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="grid.html">Grid</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main id="mainContainer">
+        <div id="dash_head">
+        <h1 id="heading1">DASHBOARD</h1>
+        <button type="button" class="add" id="addTask">+ ADD TASK</button>
+        <button type="button" class="add" id="addProject">+ ADD PROJECT</button>
+       <br><br>
+    </div>
+    <div id="cards">
+        <section class="card" id="card1">
+            <h3>Backlog</h3>
+
+        </section>
+        <section class="card" id="card2">
+            <h3>Assigned</h3>
+            <section class="block" class="list">
+                <p>lorem</p>
+            </section>
+        </section>
+        <section class="card" id="card3">
+            <h3>In Progress</h3>
+            <section class="block" class="list">
+
+            </section>
+        </section>
+
+        <section class="card" id="card4">
+            <h3>Done</h3>
+            <section class="block">
+
+            </section>
+        </section>
+
+        <section class="card" id="card5">
+            <h3>+</h3>
+            <section class="block">
+
+            </section>
+        </section>
+
+    </div>
+    </main>
+
+    <form id="form_Popup">
+
+            <h3>Create Issue Form</h3>
+            <br>
+            <div class="formGroup">
+            <label>Task Name:</label>
+            <input type="text" required>
+            </div>
+            <div class="formGroup" class="coltwo">
+            <label for="project">Parent Project:</label> 
+            <select id="project" name="project">
+                <option></option>
+            </select>
+            </div> 
+
+            <div class="formGroup" id="stretch">
+            <label>Task Description:</label>
+            <textarea type="text" name="description" id="description" rows="4" placeholder="Type here..."> </textarea>
+            </div>
+            <br>
+
+            <div class="formGroup">
+            <label>Start Date:</label>
+            <input type="date">
+    
+            <label>Due Date:</label>
+            <input type="date">
+            </div>
+
+            <div class="formGroup" class="coltwo">
+            <label>Status:</label>
+            <select id="status" name="status" value=" ">
+                <option value="Assigned">Assigned</option>
+                <option value="Ready">Ready</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+            
+            <br>
+            <div id="radioGroup">
+            <label>Priority:</label>
+            <input type="radio" id="high" name="high"> <label for="high">High</label>
+            <input type="radio" id="medium" name="medium"><label for="medium">Medium</label> 
+            <input type="radio" id="low" name="low"> <label for="low">Low</label>
+            </div>
+        </div>
+            
+        <br>
+            <button type="button" class="formadd">ADD</button> 
+            <br>
+            <button type="button" class="formadd">CANCEL</button>
+    </form>
+
+
+</body>
+</html>
