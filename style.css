@@ -44,11 +44,10 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-  color: #231d31;
-  background-color: whitesmoke;
-  border-radius: 20px 0px 0px 20px;
+  color: whitesmoke;
+  background-color: rgb(36, 47, 75);
   border-width: 100px;
-
+  border-right: 5px solid whitesmoke;
 }
 
 img
