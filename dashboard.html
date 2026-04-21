@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="functionality.js"></script>
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Sprintly Planner</title>
+</head>
+<body>
+
+        <aside>
+            <img src="SprintlyLogo.png" alt="company sprintly logo">
+            <nav>
+                <ul>
+                    <li class="active"><span class="material-icons">dashboard</span><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li class="active"><span class="material-icons">apps</span><a href="grid.html" class="active">Grid</a></li>
+                    <li class="active"><span class="material-icons">person</span><a href="profile.html" class="active">Profile</a></li>
+                </ul>
+            </nav>
+        </aside>
+    
+        <header>
+        <div class="dash_head">
+                <h1 class="heading1">DASHBOARD</h1>
+            <section id="headerActions">
+                <input id="search" type="text" placeholder="Search ...">
+                <span class="material-icons">search</span>
+                <button type="button" class="add" id="addTask">+ ADD TASK</button>
+                <button type="button" class="add" id="addProject">+ ADD PROJECT</button>
+            </section>
+        </div>
+       </header>
+
+      <main id="mainContainer">
+        <div id="cards">
+            <section class="card">
+                <section class="cardHead first">
+                    <h3>Backlog</h3>
+                </section>
+            </section>
+
+
+            <section class="card">
+                <section class="cardHead second">
+                <h3>Assigned</h3>
+                </section>
+            </section>
+
+            <section class="card">
+                <section class="cardHead third">
+                <h3>In Progress</h3>
+                </section>
+            </section>
+       
+
+            <section class="card">
+                <section class="cardHead forth">
+                <h3>Done</h3>
+                </section>
+            </section>
+
+            <section class="card">
+                <section class="cardHead fith">
+                <h3><button>+</button></h3>
+                </section>
+            </section>
+        </div>
+    </main>
+
+    <form id="form_Popup">
+
+            <h3>Create Issue Form</h3>
+            <br>
+            <div class="formGroup">
+            <label>Task Name:</label>
+            <input type="text" required>
+            </div>
+            <div class="formGroup" class="coltwo">
+            <label for="project">Parent Project:</label> 
+            <select id="project" name="project">
+                <option></option>
+            </select>
+            </div> 
+
+            <div class="formGroup" id="stretch" class="fullWidth">
+            <label>Task Description:</label>
+            <textarea type="text" name="description" id="description" rows="4" placeholder="Type here..."> </textarea>
+            </div>
+            <br>
+
+            <div class="formGroup">
+            <label>Start Date:</label>
+            <input type="date">
+                
+            <label>Due Date:</label>
+            <input type="date">
+                <br>
+            <label>Resolution Date:</label>
+            <input type="date">
+
+            <label>Target Date:</label>
+            <input type="date">
+            </div>
+
+            <div class="formGroup" class="coltwo">
+            <label>Status:</label>
+            <select id="status" name="status" value=" ">
+                <option value="Assigned">Assigned</option>
+                <option value="Ready">Ready</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Done">Done</option>
+            </select>
+            
+            <br>
+            <div id="radioGroup">
+            <label>Priority:</label>
+            <input type="radio" id="high" name="high"> <label for="high">High</label>
+            <input type="radio" id="medium" name="medium"><label for="medium">Medium</label> 
+            <input type="radio" id="low" name="low"> <label for="low">Low</label>
+            </div>
+
+            <br><br><br>
+            <label>Resolution Summary:</label>
+            <textarea type="text" name="description" id="description" rows="4" placeholder="Type here..."> </textarea>
+        </div>
+            
+        <br>
+        <div class="formAction">
+            <button type="button" class="form add">ADD</button> <button type="button" class="form add">CANCEL</button>
+        </div>
+    </form>
+
+
+</body>
+</html>

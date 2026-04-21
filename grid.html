@@ -5,27 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="functionality.js"></script>
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <title>Sprintly Planner</title>
 </head>
 <body>
-    <header>
-            
-        <img src=Sprintly.png alt="Persons face">
-        <br><br><br>
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="grid.html">Grid</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
-        </nav>
+     <aside>
+            <img src="SprintlyLogo.png" alt="company sprintly logo">
+            <nav>
+                <ul>
+                    <li class="active"><span class="material-icons">dashboard</span><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li class="active"><span class="material-icons">apps</span><a href="grid.html" class="active">Grid</a></li>
+                    <li class="active"><span class="material-icons">person</span><a href="profile.html" class="active">Profile</a></li>
+                </ul>
+            </nav>
+        </aside>
+    
+        <header>
+        <div class="dash_head">
+                <h1 class="heading1">PROJECT GRID</h1>
+            <section id="headerActions">
+                <input id="search" type="text" placeholder="Search ...">
+                <span class="material-icons">search</span>
+                <button type="button" class="add" id="addTask">+ ADD TASK</button>
+                <button type="button" class="add" id="addProject">+ ADD PROJECT</button>
+            </section>
+        </div>
+       </header>
 
-
-    </header>
     <main>
         <h1>Grid</h1>
         <Section id="mainGrid" class="gridBlock">
-            <h3>This week</h3>
+            <h3>Project 1</h3>
             <table>
                 <thead>
                 <tr>
@@ -38,11 +48,24 @@
                     <th>Due Date</th>
                 </tr>
                 </thead>
-                <tr>
+                <tr class="even">
+                    <td ></td>
+                    <td></td>
+                    <td></td>
+                    <td ></td>
                     <td></td>
                     <td></td>
                     <td></td>
+
                 </tr>
+                <tr>
+                    <td ></td>
+                    <td></td>
+                    <td></td>
+                    <td ></td>
+                    <td></td>
+                    <td></td>
+                    <td ></td>
             </table>
         </Section>
     </main>
