@@ -3,6 +3,41 @@ button.addEventListener("click", doSomething)
 
 const cards = document.getElementsByClassName("card")
 
+function changeSection(section) {
+                    let description = prompt("Change the description:")
+                    let assignment = prompt("Change the assignment:")
+                    let priority = prompt("Change the priority")
+
+                    section.innerHTML=
+                    `<p class="desc">${description}</p> 
+                    <p class="assign">${assignment}</p>   
+                    <p class="prority">${priority}</p>
+                    <button>Edit</button>
+                    `;
+
+                const editButton = section.querySelector("button")
+                editButton.addEventListener("click", function () {
+                    changeSection(section)
+
+                const viewButton=section.querySelector(".viewButton")
+                viewButton.addEventListener("click", function () {
+                    viewTheTicket(ticket)
+                })
+                })}   
+
+function viewTheTicket(ticket) {
+    alert(
+`Discoverer: ${ticket.discoverer}
+Project: ${ticket.project}
+Description: ${ticket.description}
+Assignment: ${ticket.assignment}
+Status: ${ticket.status}
+Priority: ${ticket.priority}
+targetDate: ${ticket.targetDate}
+dateSolved: ${ticket.dateSolved}
+resolution: ${ticket.resolution}`
+)}
+
 function doSomething()
 {
 let  menu= prompt(
@@ -33,140 +68,107 @@ let  menu= prompt(
                 const newSection = document.createElement('section')
                 newSection.classList.add('cardBody')
                 newSection.innerHTML = 
-                `${ticket.description} <br>
-                ${ticket.assignment}   <br>
-                ${ticket.priority}     <br>
+                `<p class="desc">${ticket.description}</p> 
+                <p class="assign">${ticket.assignment}</p>   
+                <p class="prority">${ticket.priority}</p>
                 <button>Edit</button>
-                `;
+                <button class="viewButton">View</button>
+                    `;
                 cards[0].appendChild(newSection);
 
                 const editButton = newSection.querySelector("button")
                 editButton.addEventListener("click", function () {
-                    changeSection(newSection)
+                changeSection(newSection)
                 })
-                function changeSection(section) {
-                    let description = prompt("Change the description:")
-                    let assignment = prompt("Change the assignment:")
-                    let priority = prompt("Change the priority")
 
-                    section.innerHTML=
-                    `${description} <br>
-                    ${assignment}   <br>
-                    ${priority}     <br>
-                    <button>Edit</button>
-                    `;
-
-                const editButton = newSection.querySelector("button")
-                editButton.addEventListener("click", function () {
-                    changeSection(section)
-                })}   
+                const viewButton=newSection.querySelector(".viewButton")
+                viewButton.addEventListener("click", function () {
+                    viewTheTicket(ticket)
+                })
                 break;
             
+                //--------------------------------------------------------------------
+                //--------------------------------------------------------------------
+
                 case ticket.status == "assigned":
                 const newSection1 = document.createElement('section')
                 newSection1.classList.add('cardBody')
                 newSection1.innerHTML = 
-                `${ticket.description} <br>
-                ${ticket.assignment}   <br>
-                ${ticket.priority}     <br>
+                `<p class="desc">${ticket.description}</p> 
+                <p class="assign">${ticket.assignment}</p>   
+                <p class="prority">${ticket.priority}</p>
                 <button>Edit</button>
-                `;
+                <button class="viewButton">View</button>
+                    `;
                 cards[1].appendChild(newSection1);
 
                 
                 const editButton1 = newSection1.querySelector("button")
                 editButton1.addEventListener("click", function () {
-                    changeSection(newSection1)
+                changeSection(newSection1)
                 })
-                function changeSection(section) {
-                    let description = prompt("Change the description:")
-                    let assignment = prompt("Change the assignment:")
-                    let priority = prompt("Change the priority")
 
-                    section.innerHTML=
-                    `${description} <br>
-                    ${assignment}   <br>
-                    ${priority}     <br>
-                    <button>Edit</button>
-                    `;
-
-                const editButton1 = newSection1.querySelector("button")
-                editButton1.addEventListener("click", function () {
-                    changeSection(section)
-                })}   
+                const viewButton1=newSection1.querySelector(".viewButton")
+                viewButton1.addEventListener("click", function () {
+                    viewTheTicket(ticket)
+                })
                 break;
+
+                //--------------------------------------------------------------------
+                //--------------------------------------------------------------------
 
                 case ticket.status == "underway":
                 const newSection2 = document.createElement('section')
                 newSection2.classList.add('cardBody')
                 newSection2.innerHTML = 
-                `${ticket.description} <br>
-                ${ticket.assignment}   <br>
-                ${ticket.priority}     <br>
+                `<p class="desc">${ticket.description}</p> 
+                <p class="assign">${ticket.assignment}</p>   
+                <p class="prority">${ticket.priority}</p>
                 <button>Edit</button>
-                `
+                <button class="viewButton">View</button>
+                    `;
                 cards[2].appendChild(newSection2)
 
-
-
                 const editButton2 = newSection2.querySelector("button")
                 editButton2.addEventListener("click", function () {
-                    changeSection(newSection2)
+                    changeSection(newSection2) 
                 })
-                function changeSection(section) {
-                    let description = prompt("Change the description:")
-                    let assignment = prompt("Change the assignment:")
-                    let priority = prompt("Change the priority")
 
-                    section.innerHTML=
-                    `${description} <br>
-                    ${assignment}   <br>
-                    ${priority}     <br>
-                    <button>Edit</button>
-                    `;
-
-                const editButton2 = newSection2.querySelector("button")
-                editButton2.addEventListener("click", function () {
-                    changeSection(section)
-                })}   
+                const viewButton2=newSection2.querySelector(".viewButton")
+                viewButton2.addEventListener("click", function () {
+                    viewTheTicket(ticket)
+                })
                 break;
 
+                //--------------------------------------------------------------------
+                //--------------------------------------------------------------------
+                
                 case ticket.status == "done":
                 const newSection3 = document.createElement('section');
                 newSection3.classList.add('cardBody')
                 newSection3.innerHTML = 
-                `${ticket.description} <br>
-                ${ticket.assignment}   <br>
-                ${ticket.priority}     <br>
+               `<p class="desc">${ticket.description}</p> 
+                <p class="assign">${ticket.assignment}</p>   
+                <p class="prority">${ticket.priority}</p>
                 <button>Edit</button>
-                `;
-                cards[3].appendChild(newSection3);
-
-
-                 const editButton3 = newSection3.querySelector("button")
-                editButton3.addEventListener("click", function () {
-                    changeSection(newSection3)
-                })
-                function changeSection(section) {
-                    let description = prompt("Change the description:")
-                    let assignment = prompt("Change the assignment:")
-                    let priority = prompt("Change the priority")
-
-                    section.innerHTML=
-                    `${description} <br>
-                    ${assignment}   <br>
-                    ${priority}     <br>
-                    <button>Edit</button>
+                <button class="viewButton">View</button>
                     `;
+                cards[3].appendChild(newSection3);
 
                 const editButton3 = newSection3.querySelector("button")
                 editButton3.addEventListener("click", function () {
-                    changeSection(section)
-                })}   
+                changeSection(newSection3)
+                })
+
+                const viewButton3=newSection3.querySelector(".viewButton")
+                viewButton3.addEventListener("click", function () {
+                    viewTheTicket(ticket)
+                })
                 break;
+
+                //--------------------------------------------------------------------
+                //--------------------------------------------------------------------
             }
-
-
             break;
 
         case "2":
