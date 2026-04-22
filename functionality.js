@@ -1,17 +1,22 @@
+//Main event listener to add whatever the user types to the webpage
 const button = document.getElementById("addTask")
 button.addEventListener("click", doSomething)
 
+//Getting card elements and storing in collection to distinguise which card to place info
 const cards = document.getElementsByClassName("card")
 
+//Function to edit info
 function changeSection(section) {
+                    
+
                     let description = prompt("Change the description:")
                     let assignment = prompt("Change the assignment:")
                     let priority = prompt("Change the priority")
-
+                
                     section.innerHTML=
                     `<p class="desc">${description}</p> 
                     <p class="assign">${assignment}</p>   
-                    <p class="prority">${priority}</p>
+                    <p class="prority" ${priority}>${priority}</p>
                     <button>Edit</button>
                     `;
 
@@ -21,10 +26,11 @@ function changeSection(section) {
 
                 const viewButton=section.querySelector(".viewButton")
                 viewButton.addEventListener("click", function () {
-                    viewTheTicket(ticket)
+                    viewTheTicket(section)
                 })
                 })}   
 
+//Function to view the full ticket
 function viewTheTicket(ticket) {
     alert(
 `Discoverer: ${ticket.discoverer}
@@ -38,16 +44,11 @@ dateSolved: ${ticket.dateSolved}
 resolution: ${ticket.resolution}`
 )}
 
+
+//Event that takes place when button is pressed
 function doSomething()
 {
-let  menu= prompt(
-`1. Create issue
-2. Edit issue`)
-
-
-
-    switch (menu) {
-        case "1":
+            //Input from user
             let ticket= 
             {
             discoverer:    prompt('Who identified the issue?'),
@@ -61,7 +62,7 @@ let  menu= prompt(
             resolution:    prompt('Resolution summary')
             }
 
-            
+            //Switch to decide which card to place into. Using DOM and sections to output it on the webpage
             switch (true) {
 
                 case ticket.status == "backlog":
@@ -70,7 +71,7 @@ let  menu= prompt(
                 newSection.innerHTML = 
                 `<p class="desc">${ticket.description}</p> 
                 <p class="assign">${ticket.assignment}</p>   
-                <p class="prority">${ticket.priority}</p>
+                <p class="priority ${ticket.priority}">${ticket.priority}</p>
                 <button>Edit</button>
                 <button class="viewButton">View</button>
                     `;
@@ -96,7 +97,7 @@ let  menu= prompt(
                 newSection1.innerHTML = 
                 `<p class="desc">${ticket.description}</p> 
                 <p class="assign">${ticket.assignment}</p>   
-                <p class="prority">${ticket.priority}</p>
+                <p class="priority ${ticket.priority}">${ticket.priority}</p>
                 <button>Edit</button>
                 <button class="viewButton">View</button>
                     `;
@@ -123,7 +124,7 @@ let  menu= prompt(
                 newSection2.innerHTML = 
                 `<p class="desc">${ticket.description}</p> 
                 <p class="assign">${ticket.assignment}</p>   
-                <p class="prority">${ticket.priority}</p>
+                <p class="priority ${ticket.priority}">${ticket.priority}</p>
                 <button>Edit</button>
                 <button class="viewButton">View</button>
                     `;
@@ -149,7 +150,7 @@ let  menu= prompt(
                 newSection3.innerHTML = 
                `<p class="desc">${ticket.description}</p> 
                 <p class="assign">${ticket.assignment}</p>   
-                <p class="prority">${ticket.priority}</p>
+                <p class="priority ${ticket.priority}">${ticket.priority}</p>
                 <button>Edit</button>
                 <button class="viewButton">View</button>
                     `;
@@ -168,12 +169,7 @@ let  menu= prompt(
 
                 //--------------------------------------------------------------------
                 //--------------------------------------------------------------------
-            }
-            break;
-
-        case "2":
             
-            break;
-    }
+            }
 
 }
