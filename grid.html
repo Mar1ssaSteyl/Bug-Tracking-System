@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprintly Planner - Grid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body data-page="grid">
+
+    <aside>
+        <img src="SprintlyLogo.png" alt="company sprintly logo">
+        <nav>
+            <ul>
+                <li>
+                    <span class="material-icons">dashboard</span>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li class="active">
+                    <span class="material-icons">apps</span>
+                    <a href="grid.html" class="active">Grid</a>
+                </li>
+                <li>
+                    <span class="material-icons">person</span>
+                    <a href="profile.html">Profile</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <div class="dash_head">
+            <h1 class="heading1">PROJECT GRID</h1>
+            <section id="headerActions">
+                <input id="searchGrid" type="text" placeholder="Search issues...">
+                <span class="material-icons">search</span>
+                <button type="button" class="add" id="addTask">+ ADD TASK</button>
+                <button type="button" class="add" id="addProject">+ ADD PROJECT</button>
+            </section>
+        </div>
+    </header>
+
+    <main class="pageContent">
+        <section class="gridBlock">
+            <div class="filterRow">
+                <select id="projectFilter">
+                    <option value="">All Projects</option>
+                </select>
+
+                <select id="statusFilter">
+                    <option value="">All Statuses</option>
+                    <option value="open">Open</option>
+                    <option value="resolved">Resolved</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+            </div>
+
+            <table class="issuesTable">
+                <thead>
+                    <tr>
+                        <th>Summary</th>
+                        <th>Project</th>
+                        <th>Assigned To</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th>Date Identified</th>
+                        <th>Target Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="issuesTableBody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <div class="modalOverlay" id="modalOverlay"></div>
+
+    <div id="issueDetailModal" class="detailModal">
+        <div class="detailHeader">
+            <h3>Issue Details</h3>
+            <button type="button" class="closeBtn" id="detailCloseBtn">×</button>
+        </div>
+
+        <div id="issueDetailContent"></div>
+
+        <div class="detailActions">
+            <button type="button" class="formBtn" id="detailEditBtn">EDIT</button>
+            <button type="button" class="formBtn dangerBtn" id="detailDeleteBtn">DELETE</button>
+        </div>
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="data.js"></script>
+    <script src="functionality.js"></script>
+</body>
+</html>

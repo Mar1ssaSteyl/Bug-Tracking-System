@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprintly Planner - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body data-page="dashboard">
+
+    <aside>
+        <img src="SprintlyLogo.png" alt="company sprintly logo">
+        <nav>
+            <ul>
+                <li class="active">
+                    <span class="material-icons">dashboard</span>
+                    <a href="dashboard.html" class="active">Dashboard</a>
+                </li>
+                <li>
+                    <span class="material-icons">apps</span>
+                    <a href="grid.html">Grid</a>
+                </li>
+                <li>
+                    <span class="material-icons">person</span>
+                    <a href="profile.html">Profile</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <div class="dash_head">
+            <h1 class="heading1">DASHBOARD</h1>
+
+            <section id="headerActions">
+                <input id="search" type="text" placeholder="Search issues...">
+                <span class="material-icons">search</span>
+                <button type="button" class="add" id="addTask">+ ADD TASK</button>
+                <button type="button" class="add" id="addProject">+ ADD PROJECT</button>
+            </section>
+        </div>
+    </header>
+
+    <main id="mainContainer">
+        <section class="statsBar">
+            <div class="statCard">
+                <h4>Total Issues</h4>
+                <p id="statTotal">0</p>
+            </div>
+            <div class="statCard">
+                <h4>Open</h4>
+                <p id="statOpen">0</p>
+            </div>
+            <div class="statCard">
+                <h4>Resolved</h4>
+                <p id="statResolved">0</p>
+            </div>
+            <div class="statCard">
+                <h4>Overdue</h4>
+                <p id="statOverdue">0</p>
+            </div>
+        </section>
+
+        <div id="cards">
+            <section class="card">
+                <section class="cardHead first">
+                    <h3>Backlog</h3>
+                </section>
+                <div class="issueList" id="backlogList"></div>
+            </section>
+
+            <section class="card">
+                <section class="cardHead second">
+                    <h3>Assigned</h3>
+                </section>
+                <div class="issueList" id="assignedList"></div>
+            </section>
+
+            <section class="card">
+                <section class="cardHead third">
+                    <h3>In Progress</h3>
+                </section>
+                <div class="issueList" id="underwayList"></div>
+            </section>
+
+            <section class="card">
+                <section class="cardHead forth">
+                    <h3>Done</h3>
+                </section>
+                <div class="issueList" id="doneList"></div>
+            </section>
+        </div>
+    </main>
+
+    <div class="modalOverlay" id="modalOverlay"></div>
+
+    <form id="form_Popup">
+        <input type="hidden" id="issueId">
+
+        <h3 id="formTitle">Create Issue Form</h3>
+
+        <div class="formGroup fullWidth">
+            <label for="issueSummary">Issue Summary:</label>
+            <input type="text" id="issueSummary" required>
+        </div>
+
+        <div class="formGroup fullWidth">
+            <label for="issueDescription">Detailed Description:</label>
+            <textarea id="issueDescription" rows="4" placeholder="Describe the issue..."></textarea>
+        </div>
+
+        <div class="formGroup">
+            <label for="issueDiscoverer">Who Identified the Issue:</label>
+            <select id="issueDiscoverer"></select>
+        </div>
+
+        <div class="formGroup coltwo">
+            <label for="issueDateIdentified">Date Identified:</label>
+            <input type="date" id="issueDateIdentified">
+        </div>
+
+        <div class="formGroup">
+            <label for="issueProject">Related Project:</label>
+            <select id="issueProject"></select>
+        </div>
+
+        <div class="formGroup coltwo">
+            <label for="issueAssignedTo">Assigned To:</label>
+            <select id="issueAssignedTo"></select>
+        </div>
+
+        <div class="formGroup">
+            <label for="issueWorkflow">Board Column:</label>
+            <select id="issueWorkflow">
+                <option value="backlog">Backlog</option>
+                <option value="assigned">Assigned</option>
+                <option value="underway">In Progress</option>
+                <option value="done">Done</option>
+            </select>
+        </div>
+
+        <div class="formGroup coltwo">
+            <label for="issueStatus">Status:</label>
+            <select id="issueStatus">
+                <option value="open">Open</option>
+                <option value="resolved">Resolved</option>
+            </select>
+        </div>
+
+        <div class="formGroup fullWidth">
+            <label>Priority:</label>
+            <div id="radioGroup">
+                <input type="radio" id="high" name="priority" value="high">
+                <label for="high">High</label>
+
+                <input type="radio" id="medium" name="priority" value="medium" checked>
+                <label for="medium">Medium</label>
+
+                <input type="radio" id="low" name="priority" value="low">
+                <label for="low">Low</label>
+            </div>
+        </div>
+
+        <div class="formGroup">
+            <label for="issueTargetDate">Target Resolution Date:</label>
+            <input type="date" id="issueTargetDate">
+        </div>
+
+        <div class="formGroup coltwo">
+            <label for="issueActualResolutionDate">Actual Resolution Date:</label>
+            <input type="date" id="issueActualResolutionDate">
+        </div>
+
+        <div class="formGroup fullWidth">
+            <label for="issueResolutionSummary">Resolution Summary:</label>
+            <textarea id="issueResolutionSummary" rows="4" placeholder="Describe the fix or leave blank if unresolved..."></textarea>
+        </div>
+
+        <div class="formAction fullWidth">
+            <button type="button" class="formBtn" id="formAddBtn">SAVE</button>
+            <button type="button" class="formBtn" id="formCancelBtn">CANCEL</button>
+        </div>
+    </form>
+
+    <div id="issueDetailModal" class="detailModal">
+        <div class="detailHeader">
+            <h3>Issue Details</h3>
+            <button type="button" class="closeBtn" id="detailCloseBtn">×</button>
+        </div>
+
+        <div id="issueDetailContent"></div>
+
+        <div class="detailActions">
+            <button type="button" class="formBtn" id="detailEditBtn">EDIT</button>
+            <button type="button" class="formBtn dangerBtn" id="detailDeleteBtn">DELETE</button>
+        </div>
+    </div>
+
+    <script src="storage.js"></script>
+    <script src="data.js"></script>
+    <script src="functionality.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprintly Planner - Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body data-page="profile">
+
+    <aside>
+        <img src="SprintlyLogo.png" alt="company sprintly logo">
+        <nav>
+            <ul>
+                <li>
+                    <span class="material-icons">dashboard</span>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+                <li>
+                    <span class="material-icons">apps</span>
+                    <a href="grid.html">Grid</a>
+                </li>
+                <li class="active">
+                    <span class="material-icons">person</span>
+                    <a href="profile.html" class="active">Profile</a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <div class="dash_head">
+            <h1 class="heading1">PROFILE & SETUP</h1>
+            <section id="headerActions">
+                <button type="button" class="add" id="addTask">+ ADD TASK</button>
+                <button type="button" class="add" id="addProject">+ ADD PROJECT</button>
+            </section>
+        </div>
+    </header>
+
+    <main class="pageContent">
+        <section class="manageLayout">
+            <section class="manageCard">
+                <h2>People</h2>
+
+                <form id="personForm" class="miniForm">
+                    <input type="text" id="personName" placeholder="Name" required>
+                    <input type="text" id="personSurname" placeholder="Surname" required>
+                    <input type="email" id="personEmail" placeholder="Email" required>
+                    <input type="text" id="personUsername" placeholder="Username" required>
+                    <input type="text" id="personRole" placeholder="Role" required>
+                    <button type="submit" class="formBtn">ADD PERSON</button>
+                </form>
+
+                <div id="peopleList" class="infoList"></div>
+            </section>
+
+            <section class="manageCard" id="projectsSection">
+                <h2>Projects</h2>
+
+                <form id="projectForm" class="miniForm">
+                    <input type="text" id="projectNameInput" placeholder="Project name" required>
+                    <textarea id="projectDescriptionInput" rows="3" placeholder="Project description"></textarea>
+                    <button type="submit" class="formBtn">ADD PROJECT</button>
+                </form>
+
+                <div id="projectList" class="infoList"></div>
+            </section>
+        </section>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="data.js"></script>
+    <script src="functionality.js"></script>
+</body>
+</html>
