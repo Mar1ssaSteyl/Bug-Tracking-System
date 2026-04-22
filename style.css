@@ -320,3 +320,35 @@ font-weight: 900;
 td{padding: 1rem 2rem;}
 
 .even{background-color: lightgrey;}
+
+.cardBody {
+    background: rgba(255, 255, 255, 0.658);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.priority {
+    font-weight: bold;
+}
+
+.priority.low {
+    background:green;
+}
+
+.priority.medium {
+    background: orange;
+}
+
+.priority.high {
+    background: red;
+}
+
+.desc {
+  background:lightsteelblue
+}
+
+.assign {
+  background:lightblue
+}
