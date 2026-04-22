@@ -1,14 +1,14 @@
 ========================================
 
-WPR281 GROUP PROJECT
+# WPR281 GROUP PROJECT
 
-Students:
-Marissa Steyl - (603839)
-Lance Carolissen - (605105)
-Carel Paxton Van Der Westhuizen - (605116)
-Ben Linde du Toit - (603396)
+**Students:**
+- Marissa Steyl - (603839)
+- Lance Carolissen - (605105)
+- Carel Paxton Van Der Westhuizen - (605116)
+- Ben Linde du Toit - (603396)
 
-Lecturer:
+**Lecturer:**
 Michael Combrinck
 
 ========================================
