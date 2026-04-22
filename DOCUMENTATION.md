@@ -9,7 +9,7 @@
 - Ben Linde du Toit - (603396)
 
 **Lecturer:**
-Michael Combrinck
+- Michael Combrinck
 
 ========================================
 
